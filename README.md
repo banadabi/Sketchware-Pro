@@ -34,13 +34,37 @@ We respect the project's rules and your work. **If the Sketchware Pro developers
 
 ## 🛠️ Kendi Türkçe APK'nı derle / Build your own Turkish APK
 
-### Yöntem 1: GitHub üzerinden (bilgisayar gerekmez, telefondan da yapılır)
+### 📱 Yöntem 1: Bilgisayarsız, yalnız telefonla (GitHub Actions)
 
-1. GitHub hesabınızla giriş yapın ve bu sayfanın sağ üstündeki **Fork** düğmesine basın.
-2. Kendi fork'unuzda **Actions** sekmesine girin. İş akışları kapalıysa **"I understand my workflows, go ahead and enable them"** düğmesine basın.
-3. Soldaki listeden **Türkçe APK derle (Build Turkish APK)** iş akışını seçin. **Run workflow** → **Run workflow** düğmelerine basın.
-4. Derleme yaklaşık 10-20 dakika sürer. Yeşil tik çıkınca çalışmaya tıklayın. Sayfanın altındaki **Artifacts** bölümünden `SketchwarePro-turkce-…` dosyasını indirin.
-5. İnen zip dosyasını açın ve içindeki `app-debug.apk` dosyasını telefonunuza kurun.
+Bilgisayarınız yoksa APK'yı GitHub'ın kendi sunucularında, ücretsiz olarak derleyebilirsiniz. Yalnız bir telefon, internet ve ücretsiz bir GitHub hesabı yeterlidir.
+
+**🇹🇷 Adım adım:**
+
+1. **Hesap açın:** Telefonun tarayıcısından (Chrome vb.) [github.com/signup](https://github.com/signup) adresine girip ücretsiz bir hesap açın. Hesabınız varsa giriş yapın.
+   > İpucu: GitHub mobil sayfasında bazı düğmeler gizli olabilir. Tarayıcı menüsünden **"Masaüstü sitesi"** seçeneğini açarsanız her şey görünür.
+2. **Fork alın:** [github.com/banadabi/Sketchware-Pro](https://github.com/banadabi/Sketchware-Pro) sayfasına girin ve sağ üstteki **Fork** düğmesine basın. Açılan sayfada hiçbir şeyi değiştirmeden **Create fork** düğmesine basın. (Varsayılan dal Türkçe kodun bulunduğu `turkce` dalıdır, otomatik kopyalanır.)
+3. **Actions'ı açın:** Kendi fork'unuzda (adres `github.com/KULLANICI-ADINIZ/Sketchware-Pro` olur) üstteki **Actions** sekmesine girin. **"I understand my workflows, go ahead and enable them"** düğmesine basın.
+4. **Derlemeyi başlatın:** Soldaki listeden **Türkçe APK derle (Build Turkish APK)** iş akışına dokunun. Sağdaki **Run workflow** düğmesine basın. Açılan küçük pencerede dal olarak **`turkce`** seçili olsun, sonra yeşil **Run workflow** düğmesine basın.
+5. **Bekleyin:** Listede yeni bir çalışma belirir. Derleme yaklaşık **5-10** dakika sürer. Bitince yanında yeşil ✅ işareti çıkar. Sayfayı yenileyerek durumu görebilirsiniz.
+6. **APK'yı indirin:** Yeşil ✅ çalışmaya dokunun. Sayfanın en altındaki **Artifacts** bölümünde `SketchwarePro-turkce-…` adlı dosyaya dokunun ve indirin.
+7. **Kurun:** İnen dosya bir **zip** dosyasıdır. Telefonun **Dosyalar** uygulamasıyla açıp içindeki `app-debug.apk` dosyasını çıkarın ve ona dokunarak kurun. Telefon izin isterse **"bilinmeyen kaynaklardan yükleme"** iznini verin.
+
+> Not: İndirilen dosya GitHub'da 90 gün saklanır. Daha sonra yeniden indirmek isterseniz 4. adımdan tekrar derleyebilirsiniz. Bu derleme ücretsizdir.
+
+**🇬🇧 Step by step (no computer needed, phone only):**
+
+You can build the APK for free on GitHub's own servers. All you need is a phone, an internet connection and a free GitHub account.
+
+1. **Create an account:** In your phone's browser, go to [github.com/signup](https://github.com/signup) and create a free account, or sign in.
+   > Tip: Some buttons are hidden on GitHub's mobile layout. Turn on **"Desktop site"** in your browser menu to see everything.
+2. **Fork:** Open [github.com/banadabi/Sketchware-Pro](https://github.com/banadabi/Sketchware-Pro) and tap **Fork** at the top right. Leave the options as they are and tap **Create fork**. (The default branch is `turkce`, which holds the Turkish code, so it is copied automatically.)
+3. **Enable Actions:** In your fork (`github.com/YOUR-USERNAME/Sketchware-Pro`), open the **Actions** tab and tap **"I understand my workflows, go ahead and enable them"**.
+4. **Start the build:** In the list on the left, tap **Türkçe APK derle (Build Turkish APK)**. Tap **Run workflow**, make sure the branch is **`turkce`**, then tap the green **Run workflow** button.
+5. **Wait:** A new run appears in the list. It takes about **5-10** minutes and shows a green ✅ when done. Refresh the page to check.
+6. **Download:** Tap the finished run. Under **Artifacts** at the bottom of the page, tap `SketchwarePro-turkce-…` to download it.
+7. **Install:** The download is a **zip** file. Open it with your phone's **Files** app, extract `app-debug.apk` and tap it to install. Allow **"install from unknown sources"** if asked.
+
+> Note: The artifact is kept on GitHub for 90 days. You can always run step 4 again to build a new one. It is free.
 
 ### Yöntem 2: Bilgisayarda komut satırıyla (Windows / Linux / macOS)
 
@@ -65,7 +89,7 @@ APK `app/build/outputs/apk/debug/app-debug.apk` konumuna çıkar. İlk derleme b
 2. Android Studio'da **File → New → Project from Version Control** seçin ve `https://github.com/banadabi/Sketchware-Pro.git` adresini girip klonlayın.
 3. Gradle senkronizasyonu bitince **Build → Build App Bundle(s) / APK(s) → Build APK(s)** seçin.
 
-**🇬🇧 In short:** fork this repo and run the *Build Turkish APK* workflow from the Actions tab, then download the APK from the run's artifacts. Or clone it with Git LFS and run `./gradlew assembleDebug` with JDK 17+ and the Android SDK.
+**🇬🇧 With a computer:** clone it with Git LFS and run `./gradlew assembleDebug` with JDK 17+ and the Android SDK.
 
 ---
 
