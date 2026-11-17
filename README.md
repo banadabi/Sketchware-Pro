@@ -10,18 +10,64 @@
 [![Repository Size](https://img.shields.io/github/repo-size/Sketchware-Pro/Sketchware-Pro)](https://github.com/Sketchware-Pro/Sketchware-Pro)
 
 > [!NOTE]
-> **🇹🇷 Türkçe Sketchware Pro**
->
-> Bu fork, [Sketchware Pro](https://github.com/Sketchware-Pro/Sketchware-Pro)'nun **Türkçe arayüzlü** sürümüdür. Resmî değildir. Topluluk için hazırlanmıştır.
+> **🇹🇷 Türkçe Sketchware Pro** — Bu fork, [Sketchware Pro](https://github.com/Sketchware-Pro/Sketchware-Pro)'nun **Türkçe arayüzlü** sürümüdür. Resmî değildir. Topluluk için hazırlanmıştır.
 >
 > - **Tam Türkçe arayüz:** ~2000 metin çevrildi (menüler, pencereler, bildirimler, ayarlar).
 > - **Uygulama içi dil seçimi:** Ayarlar → Görünüm → **Dil** → *Sistem dili / English / Türkçe*.
-> - **Türkçe "i/I" hatası düzeltildi:** Telefon dili Türkçe olunca üretilen kod bozulmuyor (`@drawable/ıcon`, `REQ_CD_PİCKER` gibi hatalar giderildi).
+> - **Türkçe "i/I" hatası düzeltildi:** Telefon dili Türkçe olunca üretilen kod artık bozulmuyor (`@drawable/ıcon`, `REQ_CD_PİCKER` gibi).
 >
-> **Derleme:** `git lfs install && git clone https://github.com/banadabi/Sketchware-Pro && cd Sketchware-Pro && ./gradlew assembleDebug`
-> APK, `app/build/outputs/apk/debug/` altına çıkar. Git LFS gereklidir.
->
-> Bu değişiklikler ana projeye de önerildi: [#2133](https://github.com/Sketchware-Pro/Sketchware-Pro/pull/2133) (i/I düzeltmesi) ve [#2134](https://github.com/Sketchware-Pro/Sketchware-Pro/pull/2134) (Türkçe çeviri).
+> **📥 Hazır APK:** [Releases](https://github.com/banadabi/Sketchware-Pro/releases) sayfası. Release kaldırılırsa APK'yı aşağıdaki talimatla kendiniz derleyebilirsiniz.
+
+## ⚖️ Sketchware Pro geliştiricilerine not / Note to the Sketchware Pro developers
+
+**🇹🇷 Türkçe**
+
+Bu fork ve Releases sayfasındaki APK, Sketchware Pro'yu kendi dilinde kullanmak isteyen Türk kullanıcılar için hazırlandı. Ticari bir amacı yoktur. Projenin kurallarına uygun olarak hiçbir uygulama mağazasında yayınlanmaz. İngilizce bilmeyen birçok Türk kullanıcı için Türkçe arayüz, Sketchware Pro'yu öğrenip kullanabilmenin en önemli koşuludur. Bu yüzden bu APK, Türk kullanıcılar için gerçekten önemlidir.
+
+Yine de projenin kurallarına ve emeğinize saygı duyuyoruz. **Sketchware Pro geliştiricileri release'in veya APK'nın kaldırılmasını ister ya da bir şikâyet iletirse, release ve APK derhal kaldırılacaktır.** Talebinizi bu fork'ta bir [issue](https://github.com/banadabi/Sketchware-Pro/issues) açarak ya da [#2134](https://github.com/Sketchware-Pro/Sketchware-Pro/pull/2134) numaralı PR'a yorum yazarak iletebilirsiniz. Release kaldırılsa bile kaynak kod ve aşağıdaki derleme talimatı burada kalır. Böylece kullanıcılar Türkçe APK'yı kendileri derleyebilir.
+
+**🇬🇧 English**
+
+This fork and the APK on its Releases page were made for Turkish users who want to use Sketchware Pro in their own language. It is non-commercial. In line with the project's rules, it is not published on any app store. For many Turkish users who do not speak English, a Turkish interface is what makes it possible to learn and use Sketchware Pro at all. That is why this APK matters a lot to the Turkish community.
+
+We respect the project's rules and your work. **If the Sketchware Pro developers ask for the release or the APK to be taken down, or raise any complaint, the release and the APK will be removed promptly.** Please open an [issue on this fork](https://github.com/banadabi/Sketchware-Pro/issues) or comment on [#2134](https://github.com/Sketchware-Pro/Sketchware-Pro/pull/2134). Even if the release is removed, the source code and the build instructions below will stay, so users can build the Turkish APK themselves.
+
+## 🛠️ Kendi Türkçe APK'nı derle / Build your own Turkish APK
+
+### Yöntem 1: GitHub üzerinden (bilgisayar gerekmez, telefondan da yapılır)
+
+1. GitHub hesabınızla giriş yapın ve bu sayfanın sağ üstündeki **Fork** düğmesine basın.
+2. Kendi fork'unuzda **Actions** sekmesine girin. İş akışları kapalıysa **"I understand my workflows, go ahead and enable them"** düğmesine basın.
+3. Soldaki listeden **Türkçe APK derle (Build Turkish APK)** iş akışını seçin. **Run workflow** → **Run workflow** düğmelerine basın.
+4. Derleme yaklaşık 10-20 dakika sürer. Yeşil tik çıkınca çalışmaya tıklayın. Sayfanın altındaki **Artifacts** bölümünden `SketchwarePro-turkce-…` dosyasını indirin.
+5. İnen zip dosyasını açın ve içindeki `app-debug.apk` dosyasını telefonunuza kurun.
+
+### Yöntem 2: Bilgisayarda komut satırıyla (Windows / Linux / macOS)
+
+Gerekenler: [Git](https://git-scm.com/) + [Git LFS](https://git-lfs.com/), **JDK 17 veya üstü**, **Android SDK** ([Android Studio](https://developer.android.com/studio) ile birlikte gelir).
+
+```bash
+git lfs install
+git clone https://github.com/banadabi/Sketchware-Pro.git
+cd Sketchware-Pro
+# Android SDK yolunu bildirin (ANDROID_HOME ortam değişkeni de olur):
+echo "sdk.dir=/home/KULLANICI/Android/Sdk" > local.properties
+./gradlew assembleDebug        # Windows: gradlew.bat assembleDebug
+```
+
+APK `app/build/outputs/apk/debug/app-debug.apk` konumuna çıkar. İlk derleme birkaç GB indirir ve 5-20 dakika sürebilir. Lisans hatası alırsanız `sdkmanager --licenses` komutunu çalıştırın.
+
+> Git LFS kurulmadan klonlanırsa derleme `gradle-wrapper.jar` gibi dosyalarda hata verir. Bu durumda klasörün içinde `git lfs pull` çalıştırın.
+
+### Yöntem 3: Android Studio ile
+
+1. Önce Git LFS'i kurun (`git lfs install`).
+2. Android Studio'da **File → New → Project from Version Control** seçin ve `https://github.com/banadabi/Sketchware-Pro.git` adresini girip klonlayın.
+3. Gradle senkronizasyonu bitince **Build → Build App Bundle(s) / APK(s) → Build APK(s)** seçin.
+
+**🇬🇧 In short:** fork this repo and run the *Build Turkish APK* workflow from the Actions tab, then download the APK from the run's artifacts. Or clone it with Git LFS and run `./gradlew assembleDebug` with JDK 17+ and the Android SDK.
+
+---
 
 Welcome to Sketchware Pro! Here you'll find the source code of many classes in Sketchware Pro and, most importantly, the place to contribute to Sketchware Pro.
 
