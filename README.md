@@ -9,6 +9,20 @@
 [![Total downloads](https://img.shields.io/github/downloads/Sketchware-Pro/Sketchware-Pro/total)](https://github.com/Sketchware-Pro/Sketchware-Pro/releases)
 [![Repository Size](https://img.shields.io/github/repo-size/Sketchware-Pro/Sketchware-Pro)](https://github.com/Sketchware-Pro/Sketchware-Pro)
 
+> [!NOTE]
+> **🇹🇷 Türkçe Sketchware Pro**
+>
+> Bu fork, [Sketchware Pro](https://github.com/Sketchware-Pro/Sketchware-Pro)'nun **Türkçe arayüzlü** sürümüdür. Resmî değildir. Topluluk için hazırlanmıştır.
+>
+> - **Tam Türkçe arayüz:** ~2000 metin çevrildi (menüler, pencereler, bildirimler, ayarlar).
+> - **Uygulama içi dil seçimi:** Ayarlar → Görünüm → **Dil** → *Sistem dili / English / Türkçe*.
+> - **Türkçe "i/I" hatası düzeltildi:** Telefon dili Türkçe olunca üretilen kod bozulmuyor (`@drawable/ıcon`, `REQ_CD_PİCKER` gibi hatalar giderildi).
+>
+> **Derleme:** `git lfs install && git clone https://github.com/banadabi/Sketchware-Pro && cd Sketchware-Pro && ./gradlew assembleDebug`
+> APK, `app/build/outputs/apk/debug/` altına çıkar. Git LFS gereklidir.
+>
+> Bu değişiklikler ana projeye de önerildi: [#2133](https://github.com/Sketchware-Pro/Sketchware-Pro/pull/2133) (i/I düzeltmesi) ve [#2134](https://github.com/Sketchware-Pro/Sketchware-Pro/pull/2134) (Türkçe çeviri).
+
 Welcome to Sketchware Pro! Here you'll find the source code of many classes in Sketchware Pro and, most importantly, the place to contribute to Sketchware Pro.
 
 ## Building the App
